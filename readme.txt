@@ -1,5 +1,3 @@
- presentation_li_2
-
  *How to use it:
 1 Run lib_database.py to create a new database "library" which include three table:
 2 Run try_server(connect with the database) waiting for connection request;
