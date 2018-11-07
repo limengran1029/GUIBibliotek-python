@@ -38,7 +38,7 @@ def top_register():
     ca.title("Li's library 0.1  Register")
     ca.geometry('400x200+700+250')
 
-    Label(ca,text = '   name:',width=20,anchor=W).place(x=1,y=10)  #create entry to ask for username and password
+    Label(ca,text = '   Name:',width=20,anchor=W).place(x=1,y=10)  #create entry to ask for username and password
     text3 = StringVar()
     text3.set('')
     Entry(ca,textvariable = text3,width=25).place(x=155,y=10)
@@ -69,32 +69,32 @@ def top_administrator():
     menubar = Menu(admin)  #create the menu bar, submenu and commands which can call functions
     admin.config(menu = menubar)
     menu1 = Menu(menubar)
-    menubar.add_cascade(label = 'add', menu = menu1)
-    menu1.add_command(label = 'add item', command = add_item)
-    menu1.add_command(label = 'add book', command = add_book)
+    menubar.add_cascade(label = 'Add', menu = menu1)
+    menu1.add_command(label = 'Add item', command = add_item)
+    menu1.add_command(label = 'Add book', command = add_book)
     menu2 = Menu(menubar)
-    menubar.add_cascade(label = 'search', menu = menu2)
-    menu2.add_command(label = 'find book - title', command = fb_title)
-    menu2.add_command(label = 'find book - author', command = fb_author)
+    menubar.add_cascade(label = 'Search', menu = menu2)
+    menu2.add_command(label = 'Find book - Title', command = fb_title)
+    menu2.add_command(label = 'Find book - Author', command = fb_author)
     menu2.add_separator()
-    menu2.add_command(label = 'print record', command=record)
+    menu2.add_command(label = 'Print record', command=record)
     menu3 = Menu(menubar)
-    menubar.add_cascade(label = 'exit', menu = menu3)
-    menu3.add_command(label = 'exit', command = return_login_a)
+    menubar.add_cascade(label = 'Exit', menu = menu3)
+    menu3.add_command(label = 'Exit', command = return_login_a)
 
-    lf1 = LabelFrame(admin,text='add',bg = '#d8caaf')  #create buttons to call functions
+    lf1 = LabelFrame(admin,text='Add',bg = '#d8caaf')  #create buttons to call functions
     lf1.grid(padx=(30, 30), pady=(30, 0))
-    Button(lf1, text='add item', command = add_item,width=50,height=2,bg='#96a48b').grid(padx=80, pady=(30, 0))
-    Button(lf1, text='add book', command = add_book,width=50,height=2,bg='#96a48b').grid(padx=80, pady=(40, 50))
-    lf2 = LabelFrame(admin,text='find book',bg = '#d8caaf')
+    Button(lf1, text='Add item', command = add_item,width=50,height=2,bg='#96a48b').grid(padx=80, pady=(30, 0))
+    Button(lf1, text='Add book', command = add_book,width=50,height=2,bg='#96a48b').grid(padx=80, pady=(40, 50))
+    lf2 = LabelFrame(admin,text='Find book',bg = '#d8caaf')
     lf2.grid(padx=(30, 30), pady=(40, 0))
-    Button(lf2, text='title', command = fb_title,width=50,height=2,bg='#96a48b').grid(padx=80, pady=(30, 0))
-    Button(lf2, text='author', command = fb_author,width=50,height=2,bg='#96a48b').grid(padx=80, pady=(40, 50))
-    lf3 = LabelFrame(admin,text="book's record",bg = '#d8caaf')
+    Button(lf2, text='Title', command = fb_title,width=50,height=2,bg='#96a48b').grid(padx=80, pady=(30, 0))
+    Button(lf2, text='Author', command = fb_author,width=50,height=2,bg='#96a48b').grid(padx=80, pady=(40, 50))
+    lf3 = LabelFrame(admin,text="Book's Record",bg = '#d8caaf')
     lf3.grid(padx=(30, 30), pady=(40, 0))
-    Button(lf3, text="print record", command=record,width=50,height=2,bg='#96a48b').grid(padx=80, pady=(40, 50))
+    Button(lf3, text="Print record", command=record,width=50,height=2,bg='#96a48b').grid(padx=80, pady=(40, 50))
 
-    lf4 = LabelFrame(admin,text='show box',bg = 'lightyellow')  #create a text box to show information and records
+    lf4 = LabelFrame(admin,text='Show box',bg = 'lightyellow')  #create a text box to show information and records
     lf4.grid(row =0,column=1,rowspan=3,padx=(0, 30), pady=(15, 10))
     scrollbar = Scrollbar(lf4)  #create a scroll bar and bind it with the text box
     scrollbar.pack(side=RIGHT,fill='y')
@@ -121,33 +121,33 @@ def top_user():
     menubar = Menu(user)  #create the menu bar, submenu and commands which can call functions
     user.config(menu = menubar)
     menu1 = Menu(menubar)
-    menubar.add_cascade(label = 'search', menu = menu1)
-    menu1.add_command(label = 'find book - title', command = fb_title)
-    menu1.add_command(label = 'find book - author', command = fb_author)
+    menubar.add_cascade(label = 'Search', menu = menu1)
+    menu1.add_command(label = 'Find book - Title', command = fb_title)
+    menu1.add_command(label = 'Find book - Author', command = fb_author)
     menu2 = Menu(menubar)
-    menubar.add_cascade(label = 'operate', menu = menu2)
-    menu2.add_command(label = 'borrow book', command = borrow_book)
-    menu2.add_command(label = 'return book', command = return_book)
+    menubar.add_cascade(label = 'Operate', menu = menu2)
+    menu2.add_command(label = 'Borrow book', command = borrow_book)
+    menu2.add_command(label = 'Return book', command = return_book)
     menu3 = Menu(menubar)
-    menubar.add_cascade(label = 'my page', menu = menu3)
-    menu3.add_command(label = 'my loans', command = check_loans)
+    menubar.add_cascade(label = 'My page', menu = menu3)
+    menu3.add_command(label = 'My loans', command = check_loans)
     menu4 = Menu(menubar)
-    menubar.add_cascade(label = 'exit', menu = menu4)
-    menu4.add_command(label = 'exit', command = return_login_u)
+    menubar.add_cascade(label = 'Exit', menu = menu4)
+    menu4.add_command(label = 'Exit', command = return_login_u)
 
-    lf1 = LabelFrame(user,text='borrow/return',bg = 'light steel blue')  #create buttons to call functions
+    lf1 = LabelFrame(user,text='Borrow/Return',bg = 'light steel blue')  #create buttons to call functions
     lf1.grid(padx=(30, 30), pady=(30, 0))
-    Button(lf1, text='borrow book', command = borrow_book,width=50,height=2,bg='steel blue').grid(padx=80, pady=(30, 0))
-    Button(lf1, text='return book', command = return_book,width=50,height=2,bg='steel blue').grid(padx=80, pady=(40, 50))
-    lf2 = LabelFrame(user,text='find book',bg = 'light steel blue')
+    Button(lf1, text='Borrow book', command = borrow_book,width=50,height=2,bg='steel blue').grid(padx=80, pady=(30, 0))
+    Button(lf1, text='Return book', command = return_book,width=50,height=2,bg='steel blue').grid(padx=80, pady=(40, 50))
+    lf2 = LabelFrame(user,text='Find book',bg = 'light steel blue')
     lf2.grid(padx=(30, 30), pady=(40, 0))
-    Button(lf2, text='title', command = fb_title,width=50,height=2,bg='steel blue').grid(padx=80, pady=(30, 0))
-    Button(lf2, text='author', command = fb_author,width=50,height=2,bg='steel blue').grid(padx=80, pady=(40, 50))
-    lf3 = LabelFrame(user,text="check my loans",bg = 'light steel blue')
+    Button(lf2, text='Title', command = fb_title,width=50,height=2,bg='steel blue').grid(padx=80, pady=(30, 0))
+    Button(lf2, text='Author', command = fb_author,width=50,height=2,bg='steel blue').grid(padx=80, pady=(40, 50))
+    lf3 = LabelFrame(user,text="Check my loans",bg = 'light steel blue')
     lf3.grid(padx=(30, 30), pady=(40, 0))
-    Button(lf3, text="print my loans", command=check_loans,width=50,height=2,bg='steel blue').grid(padx=80, pady=(40, 50))
+    Button(lf3, text="Print my loans", command=check_loans,width=50,height=2,bg='steel blue').grid(padx=80, pady=(40, 50))
 
-    lf4 = LabelFrame(user,text='show box',bg = 'light steel blue')  #create a text box to show information and records
+    lf4 = LabelFrame(user,text='Show box',bg = 'light steel blue')  #create a text box to show information and records
     lf4.grid(row =0,column=1,rowspan=3,padx=(0, 30), pady=(15, 10))
     scrollbar = Scrollbar(lf4)  #create a scroll bar and bind it with the text box
     scrollbar.pack(side=RIGHT,fill='y')
@@ -186,7 +186,7 @@ def sign_in():
                 elif msgs1 == 'user':
                    top_user()
             elif msgs == 'fail':
-                showerror('error','please enter the right password!')
+                showerror('error','Please enter the right password!')
             elif msgs == 'user is not exist!':
                 showerror('error',msgs)
     except ConnectionRefusedError:
@@ -199,7 +199,7 @@ def enter():
     if len(name) == 0 or len(password) == 0 or len(password1) == 0:  #check and confirm the new password
         showerror('error','Fill in completely!')
     elif password != password1:
-        showerror('error','please make sure to enter the same password!')
+        showerror('error','Please make sure to enter the same password!')
     else:
         try:  #connect with server
             host,port = socket.gethostname(),9999
@@ -218,11 +218,11 @@ def enter():
 
 #definit a function to add items
 def add_item():
-    title = askstring("add item", "please enter the title:")  #ask for information of the item through tkinter.simpledialog module
-    author = askstring("add item", "please enter the author:")
-    topic = askstring("add item", "please enter the topic:")
-    language = askstring("add item", "please enter the language:")
-    location = askstring("add item", "please enter the location:")
+    title = askstring("add item", "Please enter the title:")  #ask for information of the item through tkinter.simpledialog module
+    author = askstring("add item", "Please enter the author:")
+    topic = askstring("add item", "Please enter the topic:")
+    language = askstring("add item", "Please enter the language:")
+    location = askstring("add item", "Please enter the location:")
     msg = 'add_item/%s/%s/%s/%s/%s'%(title,author,topic,language,location)  #send information to sever to write into the database
     cs.send(msg.encode('utf-8'))
     msgs = cs.recv(1024).decode('utf8')
@@ -234,7 +234,7 @@ def add_item():
 #create a function to add books
 def add_book():
     global showbox, current_name ,cs
-    title = askstring("add book", "which book do you want to add?")
+    title = askstring("add book", "Which book do you want to add?")
     msg = 'add_book/%s'%(title)
     cs.send(msg.encode('utf-8'))
     msgs = cs.recv(2048).decode('utf8')
@@ -245,17 +245,17 @@ def add_book():
         for x in item_list:  #write the book list into text box to show it
             showbox.insert(END,'''bookId: {}, title: {}, author: {}, topic: {}, language: {}, location: {},
                                   total_number: {}, inside_number: {}\n'''.format(x[0],x[1],x[2],x[3],x[4],x[5],x[6],x[7]))
-        bookId = askstring("add book", "please enter the bookId:")
-        number = askstring("add book", "how many books do you want to add?")
+        bookId = askstring("add book", "Please enter the bookId:")
+        number = askstring("add book", "How many books do you want to add?")
         msg = 'add_book_num/%s/%s/%s/%s'%(bookId,title,number,current_name)
         cs.send(msg.encode('utf-8'))
-        showinfo('message','add books successfully!')
+        showinfo('message','Add books successfully!')
         showbox.delete(0.0,END)
 
 #creat a function to search books, according to title
 def fb_title():
     global showbox
-    title = askstring("find book", "which book do you want to find?")
+    title = askstring("find book", "Which book do you want to find?")
     msg = 'fb_title/%s'%(title)
     cs.send(msg.encode('utf-8'))
     msgs = cs.recv(2048).decode('utf8')
@@ -263,13 +263,13 @@ def fb_title():
         showerror('error',msgs)
     else:
         showbox.insert(END,msgs)
-        showinfo('message','find books successfully!')
+        showinfo('message','Find books successfully!')
         showbox.delete(0.0,END)
 
 #creat a function to search books, according to author
 def fb_author():
     global showbox
-    author = askstring("find book", "which author do you want to find?")
+    author = askstring("find book", "Which author do you want to find?")
     msg = 'fb_author/%s'%(author)
     cs.send(msg.encode('utf-8'))
     msgs = cs.recv(2048).decode('utf8')
@@ -277,13 +277,13 @@ def fb_author():
         showerror('error',msgs)
     else:
         showbox.insert(END,msgs)
-        showinfo('message','find books successfully!')
+        showinfo('message','Find books successfully!')
         showbox.delete(0.0,END)
 
 #definit a function to print records of book's change
 def record():
     global showbox
-    title = askstring("print record", "which book's record do you want to print?")
+    title = askstring("print record", "Which book's record do you want to print?")
     msg = 'fb_title/%s'%(title)
     cs.send(msg.encode('utf-8'))
     msgs = cs.recv(2048).decode('utf8')
@@ -291,7 +291,7 @@ def record():
         showerror('error',msgs)
     else:
         showbox.insert(END,msgs)
-        bookId = askinteger("print record", "please enter the book's id which you want to print!")
+        bookId = askinteger("print record", "Please enter the book's id which you want to print!")
         msg = 'record/%d'%(bookId)
         cs.send(msg.encode('utf-8'))
         msgs = cs.recv(2048).decode('utf8')
@@ -300,13 +300,13 @@ def record():
         else:
             showbox.delete(0.0,END)
             showbox.insert(END,msgs)
-            showinfo('message','print records successfully!')
+            showinfo('message','Print records successfully!')
         showbox.delete(0.0,END)
 
 #definit a function to borrow books
 def borrow_book():
     global showbox, current_name
-    title = askstring("borrow book", "which book do you want to borrow?")
+    title = askstring("borrow book", "Which book do you want to borrow?")
     msg = 'fb_title/%s'%(title)
     cs.send(msg.encode('utf-8'))
     msgs = cs.recv(1024).decode('utf8')
@@ -314,7 +314,7 @@ def borrow_book():
         showerror('error',msgs)
     else:
         showbox.insert(END,msgs)
-        bookId = askinteger("borrow book", "please enter the bookId:")
+        bookId = askinteger("borrow book", "Please enter the bookId:")
         msg = 'borrow_book/%d/%s/%s'%(bookId,title,current_name)
         cs.send(msg.encode('utf-8'))
         msgs = cs.recv(2048).decode('utf8')
@@ -324,7 +324,7 @@ def borrow_book():
 #definit a function to return books
 def return_book():
     global showbox, current_name
-    title = askstring("borrow book", "which book do you want to borrow?")
+    title = askstring("borrow book", "Which book do you want to borrow?")
     msg = 'fb_title/%s'%(title)
     cs.send(msg.encode('utf-8'))
     msgs = cs.recv(1024).decode('utf8')
@@ -332,7 +332,7 @@ def return_book():
         showerror('error',msgs)
     else:
         showbox.insert(END,msgs)
-        bookId = askinteger("borrow book", "please enter the bookId:")
+        bookId = askinteger("borrow book", "Please enter the bookId:")
         msg = 'return_book/%d/%s/%s'%(bookId,title,current_name)
         cs.send(msg.encode('utf-8'))
         msgs = cs.recv(2048).decode('utf8')
@@ -349,7 +349,7 @@ def check_loans():
         showinfo('message',msgs)
     else:
         showbox.insert(END,msgs)
-        showinfo('message',"please check the list in the show box!")
+        showinfo('message',"Please check the list in the show box!")
         showbox.delete(0.0,END)
 
 #definit functions to return login window from other windows
